@@ -17,13 +17,10 @@ public class TodolistServiceImpl implements TodolistService{
         Todolist[] model = todolistRepository.getAll();
 
         System.out.println("TODO LIST");
-        for (var i = 0; i < model.length; i++){
-            var todolist = model[i];
-            var no = i + 1;
-            if(model[i] != null){
-                System.out.println(no + ". " + todolist.getTodo());
-            }
+        for (var todo : model){
+            System.out.println(todo.getId() + ". " + todo.getTodo());
         }
+
     }
 
     @Override
